@@ -1,11 +1,527 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Routine App Legal</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine - Build Better Habits</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #f8f6f2;
+            min-height: 100vh;
+            color: #2c2c2c;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #f8f6f2;
+            padding: 1rem 2rem;
+        }
+
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .app-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2c2c2c;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .app-brand:hover {
+            transform: translateY(-2px);
+        }
+
+        .app-icon {
+            font-size: 1.5rem;
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2c2c2c;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 6rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.7;
+            color: #5a5a5a;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.4;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: #2c2c2c;
+            color: #f8f6f2;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(44, 44, 44, 0.15);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(44, 44, 44, 0.25);
+            background: #1a1a1a;
+        }
+
+        /* Feature Cards */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 6rem;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            border: 1px solid rgba(44, 44, 44, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: default;
+            animation: fadeInUp 0.8s ease-out;
+            box-shadow: 0 2px 8px rgba(44, 44, 44, 0.04);
+        }
+
+        .feature-card:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature-card:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: #ffffff;
+            box-shadow: 0 12px 32px rgba(44, 44, 44, 0.12);
+            border-color: rgba(44, 44, 44, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            animation-delay: 1s;
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            animation-delay: 2s;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .feature-card p {
+            opacity: 0.7;
+            line-height: 1.6;
+            color: #5a5a5a;
+        }
+
+        /* Footer */
+        .footer {
+            background: #ede9e3;
+            border-top: 1px solid rgba(44, 44, 44, 0.1);
+            padding: 3rem 2rem 2rem;
+            margin-top: 6rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #2c2c2c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(44, 44, 44, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .footer-text {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            color: #5a5a5a;
+        }
+
+        /* Contact Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 44, 44, 0.6);
+            backdrop-filter: blur(8px);
+        }
+
+        .modal-content {
+            background: #f8f6f2;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+            border: 1px solid rgba(44, 44, 44, 0.1);
+        }
+
+        .close {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #5a5a5a;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .close:hover {
+            color: #2c2c2c;
+            transform: scale(1.1);
+        }
+
+        .modal h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            color: #2c2c2c;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c2c2c;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(44, 44, 44, 0.15);
+            border-radius: 8px;
+            background: #ffffff;
+            color: #2c2c2c;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2c2c2c;
+            box-shadow: 0 0 0 3px rgba(44, 44, 44, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(90, 90, 90, 0.6);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .send-button {
+            width: 100%;
+            padding: 1rem;
+            background: #2c2c2c;
+            color: #f8f6f2;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .send-button:hover {
+            background: #1a1a1a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(44, 44, 44, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav {
+                padding: 1rem;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Routine App Legal Documents</h1>
-    <p><a href="privacy-policy.html">Privacy Policy</a></p>
-    <p><a href="terms-of-service.html">Terms of Service</a></p>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="app-brand">
+                <span class="app-icon">🔄</span>
+                <span class="app-name">routine</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Build Better Habits</h1>
+            <p>Transform your daily routine with AI-powered insights and beautiful habit tracking</p>
+            <a href="#" class="cta-button">Start Building Habits</a>
+        </section>
+
+        <!-- Feature Cards -->
+        <section class="features">
+            <div class="feature-card">
+                <span class="feature-icon">🎯</span>
+                <h3>Smart Routine Creation</h3>
+                <p>Create personalized routines that adapt to your lifestyle. Our AI helps optimize your schedule for
+                    maximum productivity and wellbeing.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">📊</span>
+                <h3>Progress Tracking</h3>
+                <p>Visualize your habit streaks and progress with beautiful charts. See exactly how consistent you've
+                    been and celebrate your wins.</p>
+            </div>
+            <div class="feature-card">
+                <span class="feature-icon">🤖</span>
+                <h3>AI Assistant</h3>
+                <p>Get personalized advice and motivation from your AI routine coach. Receive smart suggestions to
+                    improve your habits and stay on track.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="#" onclick="openContactModal()">Contact</a>
+            </div>
+            <p class="footer-text">© 2025 Routine App. Building better habits, one day at a time.</p>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeContactModal()">&times;</span>
+            <h2>Get in Touch</h2>
+            <form onsubmit="handleContactSubmit(event)">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Tell us how we can help..." required></textarea>
+                </div>
+                <button type="submit" class="send-button">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Contact Modal Functions
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'block';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function (event) {
+            const modal = document.getElementById('contactModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        // Handle contact form submission
+        function handleContactSubmit(event) {
+            event.preventDefault();
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            // Create mailto link (you can replace this with actual form handling)
+            const subject = encodeURIComponent('Contact from Routine App Website');
+            const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+            const mailtoLink = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+
+            // Open email client
+            window.location.href = mailtoLink;
+
+            // Close modal and reset form
+            closeContactModal();
+            document.querySelector('form').reset();
+        }
+
+        // Smooth scrolling for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
+
 </html>
