@@ -20,25 +20,6 @@
             padding: 2rem 1rem;
         }
 
-        .back-arrow {
-            position: absolute;
-            left: 16rem;
-            top: 4rem;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            color: #2c2c2c;
-            cursor: pointer;
-            padding: 0.5rem;
-            border-radius: 50%;
-            transition: all 0.3s ease;
-        }
-
-        .back-arrow:hover {
-            background: rgba(44, 44, 44, 0.1);
-            transform: translateX(-3px);
-        }
-
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -145,11 +126,93 @@
         }
 
         @media (max-width: 768px) {
-            .back-arrow {
-                left: 1rem;
-                top: 1rem;
+            h1 {
+                font-size: 2rem;
             }
 
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        weight: 500;
+        margin-bottom: 1.5rem;
+        color: #2c2c2c;
+        }
+
+        .section h3 {
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+            color: #2c2c2c;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section li {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: #ede9e3;
+            border-top: 1px solid rgba(44, 44, 44, 0.1);
+            padding: 3rem 2rem 2rem;
+            margin-top: 6rem;
+            margin-left: -1rem;
+            margin-right: -1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #2c2c2c;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+        }
+
+        .footer-links a:hover {
+            background: rgba(44, 44, 44, 0.05);
+            transform: translateY(-2px);
+        }
+
+        .footer-text {
+            opacity: 0.6;
+            font-size: 0.9rem;
+            color: #5a5a5a;
+        }
+
+        @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
@@ -160,6 +223,218 @@
             }
         }
     </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>terms of service</h1>
+        <p class="last-updated">effective date: january 1, 2025</p>
+
+        <div class="section">
+            <h2>1. introduction</h2>
+            <p>welcome to routine ("the app"). by downloading or using the app, you agree to be bound by these terms of
+                service.</p>
+        </div>
+
+        <div class="section">
+            <h2>2. app services</h2>
+            <h3>2.1 features</h3>
+            <ul>
+                <li>habit tracking and routine management</li>
+                <li>progress analytics and completion statistics</li>
+                <li>ai-powered insights and recommendations</li>
+                <li>customizable habit reminders and notifications</li>
+                <li>habit streaks and goal setting</li>
+                <li>data export and backup functionality</li>
+            </ul>
+
+            <h3>2.2 pricing and payments</h3>
+            <ul>
+                <li>the app is available through in-app purchase with two subscription options:</li>
+                <li style="margin-left: 1.5rem;">monthly subscription</li>
+                <li style="margin-left: 1.5rem;">annual subscription (includes 3-day free trial)</li>
+                <li>all prices are shown in your local currency within the app</li>
+                <li>prices may vary by region and are subject to change</li>
+                <li>for annual subscriptions, the 3-day trial period begins when you confirm your subscription</li>
+                <li>no charge will be applied during the trial period</li>
+                <li>payment will be charged to your itunes account at confirmation of purchase or after the trial period
+                    ends</li>
+                <li>subscription automatically renews unless auto-renew is turned off at least 24-hours before the end
+                    of the current period</li>
+                <li>account will be charged for renewal within 24-hours prior to the end of the current period</li>
+                <li>you can manage and cancel subscriptions in your itunes account settings</li>
+                <li>if you cancel during the trial period, access to premium features will end immediately</li>
+                <li>no refunds will be issued for any unused portion of a subscription period</li>
+            </ul>
+
+            <h3>2.3 habit tracking functionality</h3>
+            <ul>
+                <li>the app tracks your habit completion and progress locally on your device</li>
+                <li>habit data and analytics remain accessible according to your preferences</li>
+                <li>you can configure different reminder schedules and habit goals within the app</li>
+                <li>ai insights are generated based on your personal habit patterns</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>3. user rights and obligations</h2>
+            <h3>3.1 age and consent</h3>
+            <ul>
+                <li>the app is available for users of all ages</li>
+                <li>users under 13 must have parent or guardian consent</li>
+                <li>you are responsible for maintaining the confidentiality of your account</li>
+            </ul>
+
+            <h3>3.2 acceptable use</h3>
+            <ul>
+                <li>you agree to use the app for legitimate habit tracking and self-improvement purposes</li>
+                <li>you agree not to use the app for any unlawful purpose</li>
+                <li>you are responsible for all activity that occurs under your account</li>
+                <li>you agree not to reverse engineer or attempt to extract the source code</li>
+                <li>you agree not to use the app in any way that could damage or overburden our infrastructure</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>4. changes to service</h2>
+            <p>we reserve the right to:</p>
+            <ul>
+                <li>modify or discontinue any part of the service</li>
+                <li>change subscription prices or availability</li>
+                <li>update these terms with reasonable notice</li>
+                <li>add or remove features to improve user experience</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. limitation of liability</h2>
+            <p>the app is provided "as is" without warranties. we are not responsible for:</p>
+            <ul>
+                <li>accuracy of habit tracking or progress analytics</li>
+                <li>any consequences of following ai-generated recommendations</li>
+                <li>interruptions in service availability</li>
+                <li>loss of habit data due to device issues or user error</li>
+                <li>any losses or damages resulting from your use of the app</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. termination</h2>
+            <p>we reserve the right to terminate or suspend access to the app for violations of these terms or for any
+                other reason at our discretion.</p>
+        </div>
+
+        <div class="section">
+            <h2>7. contact</h2>
+            <p>if you have any questions about these terms, please contact us at legal@routineapp.com</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <p class="footer-text">© 2025 Routine App. Building better habits, one day at a time.</p>
+        </div>
+    </footer>
+</body>
+
+</html>weight: 500;
+margin-bottom: 1.5rem;
+color: #2c2c2c;
+}
+
+.section h3 {
+font-size: 1.3rem;
+font-weight: 500;
+margin-bottom: 1rem;
+margin-top: 2rem;
+color: #2c2c2c;
+}
+
+.section p {
+font-size: 1.1rem;
+line-height: 1.7;
+color: #555;
+margin-bottom: 1.5rem;
+}
+
+.section ul {
+margin-left: 1.5rem;
+margin-bottom: 1.5rem;
+}
+
+.section li {
+font-size: 1.1rem;
+line-height: 1.7;
+color: #555;
+margin-bottom: 0.5rem;
+}
+
+/* Footer */
+.footer {
+background: #ede9e3;
+border-top: 1px solid rgba(44, 44, 44, 0.1);
+padding: 3rem 2rem 2rem;
+margin-top: 6rem;
+margin-left: -1rem;
+margin-right: -1rem;
+}
+
+.footer-content {
+max-width: 1200px;
+margin: 0 auto;
+text-align: center;
+}
+
+.footer-links {
+display: flex;
+justify-content: center;
+gap: 2rem;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+}
+
+.footer-links a {
+color: #2c2c2c;
+text-decoration: none;
+font-weight: 500;
+transition: all 0.3s ease;
+padding: 0.5rem 1rem;
+border-radius: 6px;
+}
+
+.footer-links a:hover {
+background: rgba(44, 44, 44, 0.05);
+transform: translateY(-2px);
+}
+
+.footer-text {
+opacity: 0.6;
+font-size: 0.9rem;
+color: #5a5a5a;
+}
+
+@media (max-width: 768px) {
+.back-arrow {
+left: 1rem;
+top: 1rem;
+}
+
+h1 {
+font-size: 2rem;
+}
+
+.footer-links {
+flex-direction: column;
+gap: 1rem;
+}
+}
+</style>
 </head>
 
 <body>
